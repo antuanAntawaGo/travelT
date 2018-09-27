@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Lugares Turísticos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header><strong>Selecciona el lugar:</strong></ion-list-header>
+  
+          <button ion-item *ngFor="let item of lugares" (click)="select($event,item)">
+            {{item.nombre}}
+          </button>
+            
+             
+        </ion-list>
+</ion-content>

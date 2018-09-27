@@ -1,0 +1,17 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Dirección Iglesia Compañia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <agm-map [latitude]="-0.1695744" [longitude]="-78.5031168" [zoom]="13">
+        <agm-direction [origin]="origin" [destination]="destination">
+        </agm-direction>
+      </agm-map>
+
+</ion-content>

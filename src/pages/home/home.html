@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="primary">
+    <ion-title style="text-align:center">
+      Travel T
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <button ion-button full color="danger" (click)="irLugares()">
+        <!--<ion-icon name="ios-map-outline"></ion-icon>-->
+      Elejir sitio
+        
+    </button>
+    
+
+    <agm-map [latitude]="-0.173065" [longitude]="-78.505014" [zoom]="13">
+        <agm-marker  [latitude]="-0.173065" [longitude]="-78.505014" >
+            <agm-info-window><strong>Tu posición</strong></agm-info-window>
+          </agm-marker>
+          <agm-marker *ngFor="let m of sitios; let i = index"[latitude]="m.lat" [longitude]="m.lng" >
+              <agm-info-window>{{m.label}}</agm-info-window>
+           </agm-marker>
+    </agm-map>
+ 
 </ion-content>
